@@ -15,8 +15,7 @@ def possible_arrangements(towels, design, max_towel_length, memo):
                 update_memo(memo, design, 1)
             else:
                 rhs_arrangements = possible_arrangements(towels, design[i:], max_towel_length, memo)
-                if rhs_arrangements > 0:
-                    update_memo(memo, design, rhs_arrangements)
+                update_memo(memo, design, rhs_arrangements)
     if design not in memo:
         memo[design] = 0
     return memo[design]
